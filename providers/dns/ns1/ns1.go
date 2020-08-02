@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-acme/lego/v3/challenge/dns01"
-	"github.com/go-acme/lego/v3/log"
-	"github.com/go-acme/lego/v3/platform/config/env"
+	"github.com/luckygo666/lego/v3/challenge/dns01"
+	"github.com/luckygo666/lego/v3/log"
+	"github.com/luckygo666/lego/v3/platform/config/env"
 	"gopkg.in/ns1/ns1-go.v2/rest"
 	"gopkg.in/ns1/ns1-go.v2/rest/model/dns"
 )

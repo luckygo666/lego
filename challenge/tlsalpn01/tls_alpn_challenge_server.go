@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/go-acme/lego/v3/log"
+	"github.com/luckygo666/lego/v3/log"
 )
 
 const (

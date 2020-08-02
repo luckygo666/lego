@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-acme/lego/v3/challenge/dns01"
+	"github.com/luckygo666/lego/v3/challenge/dns01"
 )
 
 const defaultBaseURL = "https://www.cloudxns.net/api2/"

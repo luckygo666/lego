@@ -7,11 +7,11 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/go-acme/lego/v3/providers/dns/nifcloud/internal"
+	"github.com/luckygo666/lego/v3/providers/dns/nifcloud/internal"
 
-	"github.com/go-acme/lego/v3/challenge/dns01"
-	"github.com/go-acme/lego/v3/platform/config/env"
-	"github.com/go-acme/lego/v3/platform/wait"
+	"github.com/luckygo666/lego/v3/challenge/dns01"
+	"github.com/luckygo666/lego/v3/platform/config/env"
+	"github.com/luckygo666/lego/v3/platform/wait"
 )
 
 // Environment variables names.

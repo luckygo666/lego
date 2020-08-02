@@ -3,7 +3,7 @@ package api
 import (
 	"errors"
 
-	"github.com/go-acme/lego/v3/acme"
+	"github.com/luckygo666/lego/v3/acme"
 )
 
 type ChallengeService service

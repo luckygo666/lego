@@ -12,8 +12,8 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/lightsail"
-	"github.com/go-acme/lego/v3/challenge/dns01"
-	"github.com/go-acme/lego/v3/platform/config/env"
+	"github.com/luckygo666/lego/v3/challenge/dns01"
+	"github.com/luckygo666/lego/v3/platform/config/env"
 )
 
 const (

@@ -9,10 +9,10 @@ import (
 	"net/textproto"
 	"testing"
 
-	"github.com/go-acme/lego/v3/acme"
-	"github.com/go-acme/lego/v3/acme/api"
-	"github.com/go-acme/lego/v3/challenge"
-	"github.com/go-acme/lego/v3/platform/tester"
+	"github.com/luckygo666/lego/v3/acme"
+	"github.com/luckygo666/lego/v3/acme/api"
+	"github.com/luckygo666/lego/v3/challenge"
+	"github.com/luckygo666/lego/v3/platform/tester"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

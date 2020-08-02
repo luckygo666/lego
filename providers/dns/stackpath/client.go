@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"path"
 
-	"github.com/go-acme/lego/v3/challenge/dns01"
+	"github.com/luckygo666/lego/v3/challenge/dns01"
 	"golang.org/x/net/publicsuffix"
 )
 

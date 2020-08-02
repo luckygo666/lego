@@ -9,9 +9,9 @@ import (
 
 	configdns "github.com/akamai/AkamaiOPEN-edgegrid-golang/configdns-v2"
 	"github.com/akamai/AkamaiOPEN-edgegrid-golang/edgegrid"
-	"github.com/go-acme/lego/v3/challenge/dns01"
-	"github.com/go-acme/lego/v3/log"
-	"github.com/go-acme/lego/v3/platform/config/env"
+	"github.com/luckygo666/lego/v3/challenge/dns01"
+	"github.com/luckygo666/lego/v3/log"
+	"github.com/luckygo666/lego/v3/platform/config/env"
 )
 
 // Environment variables names.

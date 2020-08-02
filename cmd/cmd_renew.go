@@ -5,10 +5,10 @@ import (
 	"crypto/x509"
 	"time"
 
-	"github.com/go-acme/lego/v3/certcrypto"
-	"github.com/go-acme/lego/v3/certificate"
-	"github.com/go-acme/lego/v3/lego"
-	"github.com/go-acme/lego/v3/log"
+	"github.com/luckygo666/lego/v3/certcrypto"
+	"github.com/luckygo666/lego/v3/certificate"
+	"github.com/luckygo666/lego/v3/lego"
+	"github.com/luckygo666/lego/v3/log"
 	"github.com/urfave/cli"
 )
 

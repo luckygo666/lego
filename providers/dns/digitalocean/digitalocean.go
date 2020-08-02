@@ -8,8 +8,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/go-acme/lego/v3/challenge/dns01"
-	"github.com/go-acme/lego/v3/platform/config/env"
+	"github.com/luckygo666/lego/v3/challenge/dns01"
+	"github.com/luckygo666/lego/v3/platform/config/env"
 )
 
 // Environment variables names.
