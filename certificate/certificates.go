@@ -7,6 +7,7 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
+	"github.com/go-acme/lego/challenge/dns01"
 	"io/ioutil"
 	"net/http"
 	"strings"
@@ -80,6 +81,53 @@ func NewCertifier(core *api.Core, resolver resolver, options CertifierOptions) *
 		resolver: resolver,
 		options:  options,
 	}
+}
+
+func (c *Certifier) GetRecords(request ObtainRequest) (records []string, err error) {
+	if len(request.Domains) == 0 {
+		return nil, errors.New("no domains to get records")
+	}
+
+	domains := sanitizeDomain(request.Domains)
+
+	if request.Bundle {
+		log.Infof("[%s] acme: Obtaining bundled SAN certificate", strings.Join(domains, ", "))
+	} else {
+		log.Infof("[%s] acme: Obtaining SAN certificate", strings.Join(domains, ", "))
+	}
+
+	order, err := c.core.Orders.New(domains)
+	if err != nil {
+		return nil, err
+	}
+
+	authz, err := c.getAuthorizations(order)
+	if err != nil {
+		// If any challenge fails, return. Do not generate partial SAN certificates.
+		c.deactivateAuthorizations(order)
+		return nil, err
+	}
+
+	for _, a := range authz {
+		domain := challenge.GetTargetedDomain(a)
+		log.Infof("[%s] acme: Trying to solve DNS-01", domain)
+
+		chlng, err := challenge.FindChallenge(challenge.DNS01, a)
+		if err != nil {
+			return nil, err
+		}
+
+		// Generate the Key Authorization for the challenge
+		keyAuth, err := c.core.GetKeyAuthorization(chlng.Token)
+		if err != nil {
+			return nil, err
+		}
+
+		fqdn, value := dns01.GetRecord(a.Identifier.Value, keyAuth)
+		records = append(records, fqdn+"|"+value)
+	}
+
+	return records, nil
 }
 
 // Obtain tries to obtain a single certificate using all domains passed into it.
